@@ -8,10 +8,7 @@ module instruction_memory (
     assign instruction = memory[address[9:2]];
 
     initial begin
-        memory[0] = 32'h00000013; // NOP
-        memory[1] = 32'h00000013; // NOP
-        memory[2] = 32'h00000013; // NOP
-        memory[3] = 32'h00000013; // NOP
+        $readmemh("../programs/test_program.hex", memory);
     end
 
 endmodule
